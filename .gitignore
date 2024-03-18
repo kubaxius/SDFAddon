@@ -21,6 +21,3 @@ addons/*
 # Others
 *.kanban
 project.godot
-testing.tres
-testing.tscn
-testing_fog.tres
