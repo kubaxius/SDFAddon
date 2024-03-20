@@ -28,9 +28,9 @@ VisualShaderNode.PORT_TYPE_VECTOR_3D,\
 ## code ##
 
 func get_shader_include_path():
-	var path:String = self.get_script().get_path().get_base_dir().rstrip("nodes")
+	var path:String = self.get_script().get_path().get_base_dir()
 	var filename:String = self.get_script().get_path().get_file().rstrip(".gd")
-	return path + "shader_includes/" + filename + ".gdshaderinc"
+	return path + "/" + filename + ".gdshaderinc"
 
 
 func _get_code(input_vars, output_vars, mode, type):

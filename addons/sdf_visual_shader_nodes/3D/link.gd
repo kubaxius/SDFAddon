@@ -1,32 +1,36 @@
-# inf_cylinder.gd
+# link.gd
 @tool
 extends VisualShaderNodeCustomSD
-class_name VisualShaderNodeSDInfCylinder
+class_name VisualShaderNodeSDLink
 
 
 func _init():
 	## visuals ##
-	name = "SDInfiniteCylinder"
-	category = "DistanceFields"
+	name = "SDLink"
+	category = "DistanceFields/3D"
 	icon_type = VisualShaderNode.PORT_TYPE_SCALAR
 	description =\
 """SDF that takes in position in 3D space and returns value based \
-on the distance from a defined cylinder surface.
+on the distance from a defined chain link surface.
 
 Negative value indicates that the point is inside of a shape, \
 and positive indicates that it's outside of it."""
 	
-	function_name = "sdInfCylinderNode"
+	function_name = "sdLinkNode"
 	
 	## inputs ##
 	input_names = [\
 	"point",\
 	"radius",\
+	"thickness",\
+	"len",\
 	"transform",\
 	]
 	
 	input_types = [\
 	VisualShaderNode.PORT_TYPE_VECTOR_3D,\
+	VisualShaderNode.PORT_TYPE_SCALAR,\
+	VisualShaderNode.PORT_TYPE_SCALAR,\
 	VisualShaderNode.PORT_TYPE_SCALAR,\
 	VisualShaderNode.PORT_TYPE_TRANSFORM,\
 	]
@@ -34,6 +38,8 @@ and positive indicates that it's outside of it."""
 	input_default_values = [\
 	Vector3.ZERO,\
 	1.0,\
+	0.5,\
+	1.5,\
 	Transform3D.IDENTITY,\
 	]
 	

@@ -1,35 +1,33 @@
-# capped_torus.gd
+# inf_cylinder.gd
 @tool
 extends VisualShaderNodeCustomSD
-class_name VisualShaderNodeSDCappedTorus
+class_name VisualShaderNodeSDCylinder
 
 
 func _init():
 	## visuals ##
-	name = "SDCappedTorus"
-	category = "DistanceFields"
+	name = "SDCylinder"
+	category = "DistanceFields/3D"
 	icon_type = VisualShaderNode.PORT_TYPE_SCALAR
 	description =\
 """SDF that takes in position in 3D space and returns value based \
-on the distance from a defined capped torus surface.
+on the distance from a defined cylinder surface.
 
 Negative value indicates that the point is inside of a shape, \
 and positive indicates that it's outside of it."""
 	
-	function_name = "sdCappedTorusNode"
+	function_name = "sdCylinderNode"
 	
 	## inputs ##
 	input_names = [\
 	"point",\
 	"radius",\
-	"thickness",\
-	"angular_length",\
+	"height",\
 	"transform",\
 	]
 	
 	input_types = [\
 	VisualShaderNode.PORT_TYPE_VECTOR_3D,\
-	VisualShaderNode.PORT_TYPE_SCALAR,\
 	VisualShaderNode.PORT_TYPE_SCALAR,\
 	VisualShaderNode.PORT_TYPE_SCALAR,\
 	VisualShaderNode.PORT_TYPE_TRANSFORM,\
@@ -38,8 +36,7 @@ and positive indicates that it's outside of it."""
 	input_default_values = [\
 	Vector3.ZERO,\
 	1.0,\
-	0.5,\
-	1.5,\
+	2.0,\
 	Transform3D.IDENTITY,\
 	]
 	

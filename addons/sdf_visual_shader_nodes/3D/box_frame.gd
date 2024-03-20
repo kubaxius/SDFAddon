@@ -1,28 +1,28 @@
 # round_box.gd
 @tool
 extends VisualShaderNodeCustomSD
-class_name VisualShaderNodeSDRoundBox
+class_name VisualShaderNodeSDBoxFrame
 
 
 func _init():
 	## visuals ##
-	name = "SDRoundBox"
-	category = "DistanceFields"
+	name = "SDBoxFrame"
+	category = "DistanceFields/3D"
 	icon_type = VisualShaderNode.PORT_TYPE_SCALAR
 	description =\
 """SDF that takes in position in 3D space and returns value based \
-on the distance from a defined rounded box surface.
+on the distance from a defined box frame surface.
 
 Negative value indicates that the point is inside of a shape, \
 and positive indicates that it's outside of it."""
 	
-	function_name = "sdRoundBoxNode"
+	function_name = "sdBoxFrameNode"
 	
 	## inputs ##
 	input_names = [\
 	"point",\
 	"dimensions",\
-	"radius",\
+	"frame_thickness",\
 	"transform",\
 	]
 	

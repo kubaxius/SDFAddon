@@ -1,39 +1,39 @@
-# box.gd
+# inf_cylinder.gd
 @tool
 extends VisualShaderNodeCustomSD
-class_name VisualShaderNodeSDBox
+class_name VisualShaderNodeSDInfCylinder
 
 
 func _init():
 	## visuals ##
-	name = "SDBox"
-	category = "DistanceFields"
+	name = "SDInfiniteCylinder"
+	category = "DistanceFields/3D"
 	icon_type = VisualShaderNode.PORT_TYPE_SCALAR
 	description =\
 """SDF that takes in position in 3D space and returns value based \
-on the distance from a defined box surface.
+on the distance from a defined cylinder surface.
 
 Negative value indicates that the point is inside of a shape, \
 and positive indicates that it's outside of it."""
 	
-	function_name = "sdBoxNode"
+	function_name = "sdInfCylinderNode"
 	
 	## inputs ##
 	input_names = [\
 	"point",\
-	"dimensions",\
+	"radius",\
 	"transform",\
 	]
 	
 	input_types = [\
 	VisualShaderNode.PORT_TYPE_VECTOR_3D,\
-	VisualShaderNode.PORT_TYPE_VECTOR_3D,\
+	VisualShaderNode.PORT_TYPE_SCALAR,\
 	VisualShaderNode.PORT_TYPE_TRANSFORM,\
 	]
 	
 	input_default_values = [\
 	Vector3.ZERO,\
-	Vector3.ONE,\
+	1.0,\
 	Transform3D.IDENTITY,\
 	]
 	
