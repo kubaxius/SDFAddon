@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgvmsm2yrusjo"]
+
+[ext_resource type="Shader" path="res://examples/shaders/raymarch.gdshader" id="1_1cjdm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qixba"]
+render_priority = 0
+shader = ExtResource("1_1cjdm")
+shader_parameter/MAX_STEPS = 100
+shader_parameter/MAX_DIST = 100.0
+shader_parameter/SURF_DIST = 0.01
+shader_parameter/RADIUS = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_frgll"]
+material = SubResource("ShaderMaterial_qixba")
+flip_faces = true
+size = Vector3(5, 5, 5)
+
+[node name="RayMarchCube" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_frgll")

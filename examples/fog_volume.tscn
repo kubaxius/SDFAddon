@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmm5xycyfpcjh"]
+
+[ext_resource type="Shader" uid="uid://5x3hob6q6dyk" path="res://examples/shaders/fog_shapes.tres" id="1_e18wt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yaf1a"]
+shader = ExtResource("1_e18wt")
+
+[node name="FogVolume" type="FogVolume"]
+size = Vector3(20, 20, 20)
+material = SubResource("ShaderMaterial_yaf1a")
