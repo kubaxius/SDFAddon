@@ -96,15 +96,15 @@ void fog() {
 
 }
 "
-graph_offset = Vector2(-1013.07, -176.341)
+graph_offset = Vector2(-1658.28, -305.208)
 mode = 4
-nodes/fog/0/position = Vector2(-40, 180)
+nodes/fog/0/position = Vector2(-540, 40)
 nodes/fog/4/node = SubResource("VisualShaderNodeInput_148yo")
 nodes/fog/4/position = Vector2(-1740, 200)
 nodes/fog/5/node = SubResource("VisualShaderNodeIf_7xa7i")
-nodes/fog/5/position = Vector2(-280, 160)
+nodes/fog/5/position = Vector2(-780, 20)
 nodes/fog/9/node = SubResource("VisualShaderNodeColorConstant_jd7hs")
-nodes/fog/9/position = Vector2(-40, 320)
+nodes/fog/9/position = Vector2(-540, 180)
 nodes/fog/10/node = SubResource("VisualShaderNodeCustom_4atlx")
 nodes/fog/10/position = Vector2(-1200, 340)
 nodes/fog/12/node = SubResource("VisualShaderNodeCustom_ao0c3")

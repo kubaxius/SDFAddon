@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://m4a3td3qo566"]
 
-[ext_resource type="PackedScene" uid="uid://bgvmsm2yrusjo" path="res://examples/ray_march_cube.tscn" id="1_ohlpl"]
 [ext_resource type="PackedScene" uid="uid://cqyjbq54otafx" path="res://examples/projection_sphere.tscn" id="2_gh7x1"]
+[ext_resource type="PackedScene" uid="uid://bgvmsm2yrusjo" path="res://examples/ray_march_cube.tscn" id="3_joddj"]
 [ext_resource type="PackedScene" uid="uid://cmm5xycyfpcjh" path="res://examples/fog_volume.tscn" id="3_mpu6n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cpf8y"]
@@ -24,10 +24,11 @@ volumetric_fog_density = 0.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jxqso")
 
-[node name="RayMarchCube" parent="." instance=ExtResource("1_ohlpl")]
-
 [node name="ProjectionSphere" parent="." instance=ExtResource("2_gh7x1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.94542, 0, 0)
 
 [node name="FogVolume" parent="." instance=ExtResource("3_mpu6n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.46455, 0, 0)
+
+[node name="RayMarchCube" parent="." instance=ExtResource("3_joddj")]
+instance_shader_parameters/SHAPE = 13
